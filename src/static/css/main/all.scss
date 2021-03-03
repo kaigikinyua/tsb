@@ -1,0 +1,31 @@
+*{
+    padding:0px;
+    margin:0px;
+    font-family: Arial;
+}
+nav.topnav{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    padding:10px;
+    max-height: 100px;
+}
+section.app{
+    position: relative;
+    width:100vw;
+    height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+div.barner{
+    position: relative;
+    width:100%;
+    padding:10px;
+    font-weight: lighter;
+    font-size: 1.2em;
+}
+button{
+    padding:10px;
+    border:1px solid transparent;
+}

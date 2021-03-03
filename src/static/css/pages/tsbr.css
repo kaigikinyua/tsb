@@ -1,0 +1,91 @@
+div.pad, div.player {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.output {
+  position: relative;
+  padding: 10px;
+  min-height: 20%;
+  background: lightseagreen;
+}
+
+div.video_player {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: hidden;
+}
+
+video#video {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+div.controls {
+  padding: 5px;
+  background: #2c4900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0;
+  -webkit-transition: opacity 0.7s;
+  transition: opacity 0.7s;
+}
+
+div.video_player:hover div.controls {
+  opacity: 1;
+}
+
+button.control {
+  background: rgba(10, 10, 10, 0.3);
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+}
+
+small.timer {
+  color: white;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+div.progress {
+  background: #3b6200;
+  height: 4px;
+}
+
+div.progress_inner {
+  position: relative;
+  background: greenyellow;
+  height: 4px;
+  width: 30%;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=tsbr.css.map */

@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TSBR</title>
+    <link rel="stylesheet" href="./static/css/main/all.css">
+    <link rel="stylesheet" href="./static/css/pages/tsbr.css">
+</head>
+<body>
+    <nav class="topnav">
+        <div class="appbar">
+            <h3>TSBR</h3>
+        </div>
+        <div class="menu"></div>
+    </nav>
+    <section class="app">
+        <div class="pad">
+            <div class="output" id="output">
+                <div class="barner">Output</div>
+            </div>
+            <textarea name="text" id="editor" cols="30" rows="10"></textarea>
+            <button name="submit">Submit</button>
+        </div>
+        <div class="player">
+            <div class="video_player">
+                <video id="video" src="/home/antony/Music/play/(62) EMINEM - AIRPLANES (music video) - YouTube.mkv"></video>
+                <!--audio player-->
+                <div class="progress" id="progress_outer">
+                    <div class="progress_inner" id="progress_inner"></div>
+                </div>
+                <div class="controls">
+                    <div class="buttons-left">
+                        <button class="control" id="playPause">P</button>
+                        <button class="control" id="repeat">R</button>
+                    </div>
+                    <div class="buttons-right">
+                        <button class="control" id="volume">V</button>
+                        <small class="timer">
+                            <i id="timer">00:01</i>
+                            /<i id="duration">00:04</i> 
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <button onclick="openDialog()">Load Video</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+
+</script>
+<script src="video_controller.js"></script>
+</html>
