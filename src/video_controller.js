@@ -1,9 +1,9 @@
+var { addTransCription }=require ('./transcription.js');
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
 const repeatButton=document.getElementById("repeat")
 //volume to be implemented latter on
 const editor=document.getElementById('editor')
-
 var video={
     IsPlaying:false,
     currentTime:videoElement.currentTime,
@@ -25,6 +25,9 @@ editor.addEventListener('keydown',(e)=>{
         console.log("Repeat Key Combination")
     }else if(e.ctrlKey && event.key=='n'){
         console.log("next statement")
+        //process the transcription
+        var text=document.getElementById('editor').value
+        addTransCription({"text":text,"currentTime":video.currentTime})
     }else{
 
     }
@@ -68,11 +71,11 @@ function pauseVideo(){
 }
 function upDateVideoTime(){
     var timer=document.getElementById("timer")
-    timer.innerHTML=covertSeconds(videoElement.currentTime)
+    timer.innerHTML=convertSeconds(videoElement.currentTime)
     video.currentTime=videoElement.currentTime
     if(video.duration==null){
         video.duration=videoElement.duration
-        var formatedDuration=covertSeconds(video.duration)
+        var formatedDuration=convertSeconds(video.duration)
         var vdDom=document.getElementById("duration")
         vdDom.innerHTML=formatedDuration
         video.formatedDuration=formatedDuration
@@ -80,7 +83,7 @@ function upDateVideoTime(){
 }
 
 
-function covertSeconds(time){
+function convertSeconds(time){
     var t=0;
     if(time<60){
         var s=deciFormat(Math.floor(time))
@@ -122,3 +125,7 @@ function openDialog(){
         console.log(err)
     })
 }
+
+
+
+
