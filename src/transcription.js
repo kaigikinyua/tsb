@@ -2,6 +2,9 @@ const timeDeltas={
     processing:5,
 }
 var transCription=[]
+function getTranscription(){
+    return transCription
+}
 function addTransCription({text,currentTime}){
     var start;
     if(currentTime>timeDeltas.processing){
@@ -18,4 +21,4 @@ function addTransCription({text,currentTime}){
     )
     console.log(transCription)
 }
-module.exports={SaveSystem,timeDeltas,addTransCription}
+module.exports={timeDeltas,addTransCription,getTranscription}
