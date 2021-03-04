@@ -1,15 +1,10 @@
-var { addTransCription }=require ('./transcription.js');
+var { addTransCription,video }=require ('./transcription.js');
+const { deciFormat }=require('./transcription.js')
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
 const repeatButton=document.getElementById("repeat")
 //volume to be implemented latter on
 const editor=document.getElementById('editor')
-var video={
-    IsPlaying:false,
-    currentTime:videoElement.currentTime,
-    duration:null,
-    durationFormated:null,
-}
 var repeat={
     start:0,
     end:0,
@@ -24,10 +19,11 @@ editor.addEventListener('keydown',(e)=>{
     }else if(e.ctrlKey && event.key=='z'){
         console.log("Repeat Key Combination")
     }else if(e.ctrlKey && event.key=='n'){
-        console.log("next statement")
-        //process the transcription
         var text=document.getElementById('editor').value
         addTransCription({"text":text,"currentTime":video.currentTime})
+        text.value=null
+        text.innerHTML=null
+        console.log("pushing transcription")
     }else{
 
     }
@@ -104,14 +100,6 @@ function convertSeconds(time){
     }
     return t
 }
-function deciFormat(x){
-    if(x<10){
-        return `0${x}`
-    }else{
-        return x
-    }
-}
-
 
 const dialog=require("electron").remote.dialog;
 function openDialog(){
@@ -119,6 +107,7 @@ function openDialog(){
     .then(result=>{
         //console.log(result)
         videoElement.src=result.filePaths[0]
+        videoElement.pathToVideo=videoElement.src.toString()
         resetVideo()
     })
     .catch((err)=>{
@@ -126,6 +115,6 @@ function openDialog(){
     })
 }
 
-
+//module.exports={ video }
 
 
