@@ -22,6 +22,17 @@ div.output {
 
 div.output_text {
   padding: 10px;
+  height: 150px;
+  overflow-y: scroll;
+}
+
+div.output_text p {
+  font-size: 0.9em;
+  padding: 10px 5px;
+}
+
+div.output_text small {
+  margin-right: 10px;
 }
 
 div.video_player {
@@ -96,5 +107,47 @@ span.knob {
   width: 7px;
   border-radius: 50%;
   margin-top: -2px;
+}
+
+div.settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+button.call_to_action {
+  overflow: hidden;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+button.call_to_action div.tooltip {
+  position: absolute;
+  margin-left: 35px;
+  opacity: 0;
+  overflow-x: hidden;
+  font-size: 0.7em;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 0px;
+}
+
+button.call_to_action:hover {
+  -webkit-box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.1);
+          box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.1);
+}
+
+button.call_to_action:hover div.tooltip {
+  width: auto;
+  opacity: 1;
+  font-size: 0.7em;
 }
 /*# sourceMappingURL=tsbr.css.map */

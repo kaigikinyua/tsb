@@ -8,6 +8,16 @@ $shadowColor:#212229;
     margin:0px;
     font-family: Arial;
 }
+::-webkit-scrollbar{
+    width:3px;
+    background:rgba(10,10,10,0.3);
+}
+::-webkit-scrollbar-thumb{
+    width:4px;
+    border-radius: 3px;
+    background:rgba(225,255,100,0.8);
+}
+
 body{
     background:$prim_color;
     overflow: hidden;
@@ -50,7 +60,7 @@ button{
 }
 .input_field_color{
     border:1px solid darken($acc_color,10%);
-    background:none;
+    background:lighten($prim_color,10%);
     padding:10px;
     color:$shadowColor;
     outline: none;
