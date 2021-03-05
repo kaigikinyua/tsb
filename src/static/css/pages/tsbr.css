@@ -9,16 +9,19 @@ div.pad, div.player {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 div.output {
   position: relative;
-  padding: 10px;
   min-height: 20%;
-  background: lightseagreen;
+  padding: 10px;
+}
+
+div.output_text {
+  padding: 10px;
 }
 
 div.video_player {
@@ -42,7 +45,6 @@ video#video {
 
 div.controls {
   padding: 5px;
-  background: #2c4900;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,12 +61,11 @@ div.video_player:hover div.controls {
 }
 
 button.control {
-  background: rgba(10, 10, 10, 0.3);
+  background: none;
   height: 30px;
   width: 30px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 50%;
-  color: white;
   text-align: center;
   padding: 5px;
   outline: none;
@@ -77,13 +78,12 @@ small.timer {
 }
 
 div.progress {
-  background: #3b6200;
+  background: gainsboro;
   height: 4px;
 }
 
 div.progress_inner {
   position: relative;
-  background: greenyellow;
   height: 4px;
   width: 30%;
   border-radius: 5px;
@@ -94,7 +94,6 @@ span.knob {
   right: 0px;
   height: 7px;
   width: 7px;
-  background: #c1ff62;
   border-radius: 50%;
   margin-top: -2px;
 }

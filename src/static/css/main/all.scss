@@ -1,7 +1,16 @@
+$prim_color:whitesmoke;
+$acc_color:#FDFF29;
+$acc_color_translucent:rgba(253,255,41,0.7);
+$callToAction:crimson;
+$shadowColor:#212229;
 *{
     padding:0px;
     margin:0px;
     font-family: Arial;
+}
+body{
+    background:$prim_color;
+    overflow: hidden;
 }
 nav.topnav{
     position: fixed;
@@ -28,4 +37,44 @@ div.barner{
 button{
     padding:10px;
     border:1px solid transparent;
+    font-weight: bolder;
+    border-radius: 30px;
+    outline:none;
+}
+
+//color elements
+.call_to_action{
+    border:1px solid darken($acc_color,10%);
+    background:lighten($acc_color,10%);
+    color:$shadowColor;
+}
+.input_field_color{
+    border:1px solid darken($acc_color,10%);
+    background:none;
+    padding:10px;
+    color:$shadowColor;
+    outline: none;
+}
+.barner_color{
+    background:lighten($prim_color,30%);
+    color:lighten($shadowColor,30%);
+}
+.asset_background{
+    background:lighten($shadowColor,10%);
+}
+.cH_1{
+    background:lighten($acc_color,10%);
+}
+.cH_2{
+    background:$acc_color;
+}
+.cH_3{
+    background:darken($acc_color,15%);
+}
+.cH_6{
+    background:black;
+}
+
+.fH_1{
+    color:$acc_color;
 }

@@ -6,6 +6,7 @@
     <title>TSBR</title>
     <link rel="stylesheet" href="./static/css/main/all.css">
     <link rel="stylesheet" href="./static/css/pages/tsbr.css">
+    <link rel="stylesheet" href="./static/css/all.min.css">
 </head>
 <body>
     <nav class="topnav">
@@ -16,28 +17,29 @@
     </nav>
     <section class="app">
         <div class="pad">
-            <div class="output" id="output">
+            <div class="output barner_color" id="output">
                 <div class="barner">Output</div>
+                <div class="output_text"></div>
             </div>
-            <textarea name="text" id="editor" cols="30" rows="10"></textarea>
-            <button name="submit">Submit</button>
+            <textarea class="input_field_color" name="text" id="editor" cols="30" rows="10" placeholder="Type subtitles here..."></textarea>
+            <button class="call_to_action" name="submit">Submit</button>
         </div>
         <div class="player">
             <div class="video_player">
-                <video id="video" src="/home/antony/Music/play/(62) EMINEM - AIRPLANES (music video) - YouTube.mkv"></video>
+                <video class="asset_background" id="video" src="/home/antony/Music/play/(62) EMINEM - AIRPLANES (music video) - YouTube.mkv"></video>
                 <!--audio player-->
                 <div class="progress" id="progress_outer">
-                    <div class="progress_inner" id="progress_inner">
-                        <span class="knob" draggable="true"></span>
+                    <div class="progress_inner cH_2" id="progress_inner">
+                        <span class="knob cH_1" draggable="true"></span>
                     </div>
                 </div>
-                <div class="controls">
+                <div class="controls cH_6">
                     <div class="buttons-left">
-                        <button class="control" id="playPause">P</button>
-                        <button class="control" id="repeat">R</button>
+                        <button class="control fH_1" id="playPause"><i class="fa fa-play"></i></button>
+                        <button class="control fH_1" id="repeat"><i class="fa fa-reply"></i></button>
                     </div>
                     <div class="buttons-right">
-                        <button class="control" id="volume">V</button>
+                        <button class="control fH_1" id="volume"><i class="fa fa-volume-up"></i></button>
                         <small class="timer">
                             <i id="timer">00:01</i>
                             /<i id="duration">00:04</i> 
@@ -46,7 +48,16 @@
                 </div>
             </div>
             <div class="settings">
-                <button onclick="openDialog()">Load Video</button>
+                <button class="call_to_action" onclick="openDialog()"><i class="fa fa-upload"></i></button>
+                <button class="call_to_action"><i class="fa fa-file-audio"></i></button>
+                <button class="call_to_action"><i class="fa fa-check"></i></button>
+                <button class="call_to_action"><i class="fa fa-exclamation-circle"></i></button>
+            </div>
+            <div class="settings">
+                <button class="call_to_action" onclick="openDialog()"><i class="fa fa-upload"></i></button>
+                <button class="call_to_action"><i class="fa fa-file-audio"></i></button>
+                <button class="call_to_action"><i class="fa fa-check"></i></button>
+                <button class="call_to_action"><i class="fa fa-exclamation-circle"></i></button>
             </div>
         </div>
     </section>

@@ -32,6 +32,7 @@ videoElement.addEventListener('timeupdate',(e)=>{
     upDateVideoTime()
     if(video.duration==null){
         video.duration=videoElement.duration
+        resetVideo()
      }
     //increase length of progress_inner
     var pInner=document.getElementById("progress_inner")
@@ -60,10 +61,16 @@ function resetVideo(){
 }
 
 function playVideo(){
+    var p=document.getElementById("playPause")
+    p.innerHTML=null
     videoElement.play();
+    p.innerHTML="<i class='fa fa-pause'></i>"
 }
 function pauseVideo(){
+    var p=document.getElementById("playPause")
+    p.innerHTML=null
     videoElement.pause();
+    p.innerHTML="<i class='fa fa-play'></i>"
 }
 function upDateVideoTime(){
     var timer=document.getElementById("timer")
@@ -103,12 +110,13 @@ function convertSeconds(time){
 
 const dialog=require("electron").remote.dialog;
 function openDialog(){
+    pauseVideo()
     dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] })
     .then(result=>{
         //console.log(result)
+        setTimeout(resetVideo(),1000)
         videoElement.src=result.filePaths[0]
         videoElement.pathToVideo=videoElement.src.toString()
-        resetVideo()
     })
     .catch((err)=>{
         console.log(err)

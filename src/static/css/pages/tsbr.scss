@@ -5,14 +5,16 @@ div.pad,div.player{
     display: flex;
     flex-direction: column;
     padding:10px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 div.output{
     position: relative;
-    padding:10px;
     min-height: 20%;
-    background: lightseagreen;
+    padding:10px;
+}
+div.output_text{
+    padding:10px;
 }
 
 div.video_player{
@@ -25,11 +27,12 @@ div.video_player{
 video#video{
     position: relative;
     width:100%;
+    //correct this to height:auto;
     height:auto;
 }
 div.controls{
     padding:5px;
-    background:darken(greenyellow,45%);
+    //background:darken(greenyellow,45%);
     display: flex;
     justify-content: space-between;
     opacity: 0;
@@ -39,12 +42,13 @@ div.video_player:hover div.controls{
     opacity: 1;
 }
 button.control{
-    background:rgba(10,10,10,0.3);
+    //background:rgba(10,10,10,0.3);
+    background: none;
     height:30px;
     width:30px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 50%;
-    color:white;
+    //color:white;
     text-align: center;
     padding:5px;
     outline:none;
@@ -55,12 +59,12 @@ small.timer{
     font-weight: bolder;
 }
 div.progress{
-    background:darken(greenyellow,40%);
+    background:darken(whitesmoke,10%);
     height:4px;
 }
 div.progress_inner{
     position: relative;
-    background:greenyellow;
+    //background:greenyellow;
     height:4px;
     width:30%;
     border-radius: 5px;
@@ -70,7 +74,7 @@ span.knob{
     right:0px;
     height:7px;
     width:7px;
-    background:lighten(greenyellow,10%);
+    //background:lighten(greenyellow,10%);
     border-radius: 50%;
     margin-top:-2px;
 }
