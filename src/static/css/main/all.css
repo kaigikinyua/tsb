@@ -6,27 +6,24 @@
 
 ::-webkit-scrollbar {
   width: 3px;
-  background: rgba(10, 10, 10, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
   width: 4px;
   border-radius: 3px;
-  background: rgba(225, 255, 100, 0.8);
 }
 
 body {
-  background: whitesmoke;
   overflow: hidden;
 }
 
 nav.topnav {
   position: fixed;
+  z-index: 10;
   top: 0px;
   left: 0px;
   width: 100vw;
-  padding: 10px;
-  max-height: 100px;
+  height: 60px;
 }
 
 div.appbar {
@@ -45,8 +42,12 @@ img.logo {
 
 section.app {
   position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  overflow-y: scroll;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -63,53 +64,14 @@ div.barner {
 
 button {
   padding: 10px;
-  border: 1px solid transparent;
   font-weight: bolder;
   border-radius: 30px;
   outline: none;
 }
 
-.call_to_action {
-  border: 1px solid #f3f500;
-  background: #fdff5c;
-  color: #212229;
-}
-
-.input_field_color {
-  border: 1px solid #f3f500;
-  background: white;
+.input {
   padding: 5px 10px;
-  color: #212229;
   outline: none;
-}
-
-.barner_color {
-  background: white;
-  color: #65687e;
-}
-
-.asset_background {
-  background: #383945;
-}
-
-.cH_1 {
-  background: #fdff5c;
-}
-
-.cH_2 {
-  background: #FDFF29;
-}
-
-.cH_3 {
-  background: #d9dc00;
-}
-
-.cH_6 {
-  background: black;
-}
-
-.fH_1 {
-  color: #FDFF29;
 }
 
 .tab_hidden {
@@ -122,8 +84,6 @@ button {
 .tab_show {
   overflow: hidden;
   left: 0px;
-  -webkit-box-shadow: 1px 1px 50px 10px #212229;
-          box-shadow: 1px 1px 50px 10px #212229;
   -webkit-animation: 0.8s 0s tab_show ease-in;
           animation: 0.8s 0s tab_show ease-in;
 }

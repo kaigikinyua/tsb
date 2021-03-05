@@ -1,0 +1,70 @@
+::-webkit-scrollbar {
+  background: rgba(10, 10, 10, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(225, 255, 100, 0.8);
+}
+
+body {
+  background: #212229;
+}
+
+nav.topnav {
+  background: #383945;
+}
+
+div.appbar {
+  background: #383945;
+}
+
+button {
+  border: 1px solid transparent;
+}
+
+.call_to_action {
+  border: 1px solid #f3f500;
+  background: #fdff10;
+  color: #212229;
+}
+
+.input_field_color {
+  border: 1px solid #fdff5c;
+  background: #383945;
+  color: darkgray;
+}
+
+.barner_color {
+  background: #434553;
+  color: gainsboro;
+}
+
+.asset_background {
+  background: #434553;
+}
+
+.cH_1 {
+  background: #fdff5c;
+}
+
+.cH_2 {
+  background: #FDFF29;
+}
+
+.cH_3 {
+  background: #d9dc00;
+}
+
+.cH_6 {
+  background: black;
+}
+
+.fH_1 {
+  color: #FDFF29;
+}
+
+.tab_show {
+  -webkit-box-shadow: 1px 1px 50px 10px #212229;
+          box-shadow: 1px 1px 50px 10px #212229;
+}
+/*# sourceMappingURL=dark.css.map */

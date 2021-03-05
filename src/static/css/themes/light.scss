@@ -1,0 +1,62 @@
+$prim_color:whitesmoke;
+$acc_color:#FDFF29;
+$acc_color_translucent:rgba(253,255,41,0.7);
+$callToAction:crimson;
+$shadowColor:#212229;
+
+::-webkit-scrollbar{
+    background:rgba(10,10,10,0.3);
+}
+::-webkit-scrollbar-thumb{
+    background:rgba(225,255,100,0.8);
+}
+body{
+    background:$prim_color;
+}
+nav.topnav{
+    background:lighten($prim_color,10%);
+}
+div.appbar{
+    background:lighten($prim_color,10%);
+}
+button{
+    border:1px solid transparent;
+}
+
+.call_to_action{
+    border:1px solid darken($acc_color,10%);
+    background:lighten($acc_color,10%);
+    color:$shadowColor;
+}
+.input_field_color{
+    border:1px solid darken($acc_color,10%);
+    background:lighten($prim_color,10%);
+    color:$shadowColor;
+}
+.barner_color{
+    background:lighten($prim_color,30%);
+    color:lighten($shadowColor,30%);
+}
+.asset_background{
+    background:lighten($shadowColor,10%);
+}
+.cH_1{
+    background:lighten($acc_color,10%);
+}
+.cH_2{
+    background:$acc_color;
+}
+.cH_3{
+    background:darken($acc_color,15%);
+}
+.cH_6{
+    background:black;
+}
+
+.fH_1{
+    color:$acc_color;
+}
+.tab_show{
+    box-shadow: 1px 1px 50px 10px $shadowColor;
+}
+

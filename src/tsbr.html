@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/css/pages/tsbr.css">
     <link rel="stylesheet" href="./static/css/components/preview.css">
     <link rel="stylesheet" href="./static/css/all.min.css">
+    <link rel="stylesheet" href="./static/css/themes/light.css" id="theme"/>
 </head>
 <body>
     <nav class="topnav barner_color">
@@ -19,13 +20,15 @@
     </nav>
     <section class="app">
         <div class="pad">
+            <div>
+                <textarea class="input input_field_color" name="text" id="editor" cols="70" rows="10" placeholder="Type subtitles here..."></textarea>
+                <!--<button class="call_to_action" name="submit">Submit</button>-->
+            </div>
             <div class="output barner_color">
                 <div class="barner">Transcriptions</div>
                 <div class="output_text" id="output">
                 </div>
             </div>
-            <textarea class="input_field_color" name="text" id="editor" cols="30" rows="10" placeholder="Type subtitles here..."></textarea>
-            <button class="call_to_action" name="submit">Submit</button>
         </div>
         <div class="player">
             <div class="video_player">
@@ -50,16 +53,18 @@
                     </div>
                 </div>
             </div>
-            <div class="settings">
+            <div class="actions">
+                <div class="settings">
                 <button class="call_to_action" onclick="openDialog()"><i class="fa fa-upload"></i><div class="tooltip">Load file</div></button>
                 <button class="call_to_action"><i class="fa fa-file-audio"></i><div class="tooltip">Audio mode</div></button>
-                <button class="call_to_action"><i class="fa fa-adjust"></i><div class="tooltip">Change Theme</div></button>
+                <button class="call_to_action" onclick="changeTheme()"><i class="fa fa-adjust"></i><div class="tooltip">Change Theme</div></button>
             
-            </div>
-            <div class="settings">
+                </div>
+                <div class="settings">
                 <button class="call_to_action" onclick="openSettings()"><i class="fa fa-cog"></i><div class="tooltip">Settings</div></button>
                 <button class="call_to_action" onclick="saveTranscription()"><i class="fa fa-save"></i><div class="tooltip">Save</div></button>
                 <button class="call_to_action" onclick="openPreview()"><i class="fa fa-eye"></i><div class="tooltip">Preview</div></button>
+                </div>
             </div>
         </div>
     </section>
@@ -73,10 +78,10 @@
             </div>
             <div class="adjust">
                 <span>
-                    Start: <input class="input_field_color" type="number" name="start" placeholder="125.658">
+                    Start: <input class="input input_field_color" type="number" name="start" placeholder="125.658">
                 </span>
                 <span>
-                    End: <input class="input_field_color" type="number" name="start" placeholder="125.658"> 
+                    End: <input class="input input_field_color" type="number" name="start" placeholder="125.658"> 
                 </span>
             </div>
             <div class="transcriptions">
@@ -103,7 +108,7 @@
             </div>
             <div class="deltas">
                 <span>
-                    Display Delta: <input type="number" class="input_field_color"/>
+                    Display Delta: <input type="number" class="input input_field_color"/>
                 </span>
             </div>
 

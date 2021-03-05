@@ -19,10 +19,9 @@ editor.addEventListener('keydown',(e)=>{
     }else if(e.ctrlKey && event.key=='z'){
         console.log("Repeat Key Combination")
     }else if(e.ctrlKey && event.key=='n'){
-        var text=document.getElementById('editor').value
-        addTransCription({"text":text,"currentTime":video.currentTime})
-        text.value=null
-        text.innerHTML=null
+        var text=document.getElementById('editor')
+        addTransCription({"text":text.value,"currentTime":video.currentTime})
+        text.value=''
     }else{
 
     }

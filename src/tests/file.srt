@@ -1,24 +1,52 @@
 0
-00:00:08,454 --> 00:00:011,454
-Could we pretend that airplanes
+00:00:10,307 --> 00:00:013,307
+Can we pretend like airplanes
 
 1
-00:00:011,554 --> 00:00:013,034
-In the night sky
+00:00:013,407 --> 00:00:014,399
+In the night sky are like shooting stars
 
 2
-00:00:013,134 --> 00:00:014,616
-Are like shooting stars
+00:00:014,499 --> 00:00:016,578
+I could realy use a wish right now
 
 3
-00:00:014,716 --> 00:00:016,920
-I could realy use a wish right now
+00:00:016,678 --> 00:00:017,999
+Wish right now
 
 4
-00:00:017,020 --> 00:00:017,955
-I could realy use a wish right now
+00:00:018,099 --> 00:00:019,690
+Wish right now
 
 5
-00:00:018,055 --> 00:00:019,526
+00:00:019,790 --> 00:00:021,971
+Could we pretend like airplanes
+
+6
+00:00:022,071 --> 00:00:024,946
+In the night sky are like shooting stars
+
+7
+00:00:025,046 --> 00:00:027,754
 I could realy use a wish right now
+
+8
+00:00:027,854 --> 00:00:029,136
+wish right now
+
+9
+00:00:029,236 --> 00:00:030,558
+wish right now
+
+10
+00:00:030,658 --> 00:00:035,574
+And it seems like yesterday
+
+11
+00:00:035,674 --> 00:00:037,216
+It was just a dream
+
+12
+00:00:037,316 --> 00:00:039,661
+Those days are gone
 

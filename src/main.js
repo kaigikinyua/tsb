@@ -5,6 +5,7 @@ const url=require('url')
 function createWindow(){
     let win=new BrowserWindow(
             {
+                icon:"./static/images/logo.png",
                 width:800,height:600,
                 webPreferences:{
                     nodeIntegration:true,
