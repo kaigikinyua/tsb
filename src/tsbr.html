@@ -6,28 +6,22 @@
     <title>TSBR</title>
     <link rel="stylesheet" href="./static/css/main/all.css">
     <link rel="stylesheet" href="./static/css/pages/tsbr.css">
+    <link rel="stylesheet" href="./static/css/components/preview.css">
     <link rel="stylesheet" href="./static/css/all.min.css">
 </head>
 <body>
     <nav class="topnav barner_color">
         <div class="appbar">
             <h3>TSBR</h3>
+            <img class="logo" src="./static/images/logo.png" alt="">
         </div>
         <div class="menu"></div>
     </nav>
     <section class="app">
         <div class="pad">
-            <div class="output barner_color" id="output">
-                <div class="barner">Output</div>
-                <div class="output_text">
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
-                    <p><small>00:00:01,100</small>Hello World</p>
+            <div class="output barner_color">
+                <div class="barner">Transcriptions</div>
+                <div class="output_text" id="output">
                 </div>
             </div>
             <textarea class="input_field_color" name="text" id="editor" cols="30" rows="10" placeholder="Type subtitles here..."></textarea>
@@ -63,16 +57,67 @@
             
             </div>
             <div class="settings">
-                <button class="call_to_action"><i class="fa fa-cog"></i><div class="tooltip">Settings</div></button>
-                <button class="call_to_action"><i class="fa fa-save"></i><div class="tooltip">Save</div></button>
-                <button class="call_to_action"><i class="fa fa-eye"></i><div class="tooltip">Preview</div></button>
+                <button class="call_to_action" onclick="openSettings()"><i class="fa fa-cog"></i><div class="tooltip">Settings</div></button>
+                <button class="call_to_action" onclick="saveTranscription()"><i class="fa fa-save"></i><div class="tooltip">Save</div></button>
+                <button class="call_to_action" onclick="openPreview()"><i class="fa fa-eye"></i><div class="tooltip">Preview</div></button>
             </div>
         </div>
     </section>
+    <section class="tab tab_hidden" id="preview_window">
+        <div class="appbar">
+            <h3>Preview</h3>
+        </div>
+        <div class="tab_content">
+            <div class="preview_text" id="preview_text">
+                <p>Test Text</p>
+            </div>
+            <div class="adjust">
+                <span>
+                    Start: <input class="input_field_color" type="number" name="start" placeholder="125.658">
+                </span>
+                <span>
+                    End: <input class="input_field_color" type="number" name="start" placeholder="125.658"> 
+                </span>
+            </div>
+            <div class="transcriptions">
+                <p><small>00:00:01,300</small><small>00:00:02,100</small> Lorem ipsum dolor sit amet.</p>
+                <p><small>00:00:01,300</small><small>00:00:02,100</small> Lorem, ipsum dolor.</p>
+                <p><small>00:00:01,300</small><small>00:00:02,100</small> Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+        </div>
+        <div class="close" onclick="closeTab()">
+            <i class="fa fa-window-close"></i>
+        </div>
+    </section>
+    <section class="tab tab_hidden" id="settings">
+        <div class="appbar">
+            <h3>Settings</h3>
+        </div>
+        <div class="tab_content">
+            <div class="projects">
+                <div class="project">
+                    <span>Project Name</span>
+                    <!--load project option-->
+                    <!--Delete project option-->
+                </div>
+            </div>
+            <div class="deltas">
+                <span>
+                    Display Delta: <input type="number" class="input_field_color"/>
+                </span>
+            </div>
+
+        </div>
+        <div class="close" onclick="closeTab()">
+            <i class="fa fa-window-close"></i>
+        </div>
+    </section>
+
 </body>
 <script>
 
 </script>
 <script src="video_controller.js"></script>
 <script src="files.js"></script>
+<script src="ui.js"></script>
 </html>

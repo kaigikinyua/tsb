@@ -28,7 +28,7 @@ class SaveSystem{
         for(var i=0;i<data.length;i++){
             //console.log(data[i].start)
             //console.log(data[i].end)
-            exportDataString+=`${i}\n${data[i].start} ---> ${data[i].end}\n${data[i].text}\n`
+            exportDataString+=`${i}\n${data[i].start} --> ${data[i].end}\n${data[i].text}\n\n`
         }
         this.saveData(exportDataString)
         console.log(exportDataString)

@@ -7,9 +7,10 @@ var video={
 }
 
 const timeDeltas={
-    processing:5,
+    processing:3,
 }
 var transCription=[]
+var lastTsendTime=null
 function getTranscription(){
     return transCription
 }
@@ -20,14 +21,25 @@ function addTransCription({text,currentTime}){
     }else{
         start=currentTime-1
     }
-    transCription.push(
-        {
-            "start":convertToSrtTimeFormat(start),
-            "end":convertToSrtTimeFormat(currentTime),
-            "text":text
+    start=synchTransCription(start)
+    lastTsEndTime=currentTime
+    var start=convertToSrtTimeFormat(start)
+    var end=convertToSrtTimeFormat(currentTime)
+    transCription.push({"start":start,"end":end,"text":text})
+    var output=document.getElementById("output")
+    var append=`<small>${start}</small><small>${end}</small>${text}`
+    var p=document.createElement('p')
+    p.innerHTML=append
+    output.appendChild(p)
+    //console.log(transCription)
+}
+function synchTransCription(tsStartTime){
+    if(transCription.length>0){
+        if(lastTsendTime<=tsStartTime){
+            tsStartTime=lastTsEndTime+0.1
         }
-    )
-    console.log(transCription)
+    }
+    return tsStartTime
 }
 function convertToSrtTimeFormat(time){
     var tString=null;

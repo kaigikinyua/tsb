@@ -30,6 +30,16 @@ nav.topnav{
     padding:10px;
     max-height: 100px;
 }
+div.appbar{
+    display: flex;
+}
+img.logo{
+    position: relative;
+    top:-10px;
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+}
 section.app{
     position: relative;
     width:100vw;
@@ -61,7 +71,7 @@ button{
 .input_field_color{
     border:1px solid darken($acc_color,10%);
     background:lighten($prim_color,10%);
-    padding:10px;
+    padding:5px 10px;
     color:$shadowColor;
     outline: none;
 }
@@ -87,4 +97,26 @@ button{
 
 .fH_1{
     color:$acc_color;
+}
+
+
+
+//tabs
+.tab_hidden{
+    left:-100%;
+    //width:0px;
+    box-shadow: none;
+    overflow: hidden;
+    //animation: 0s 0s tab_show reverse;
+}
+.tab_show{
+    overflow: hidden;
+    left:0px;
+    box-shadow: 1px 1px 50px 10px $shadowColor;
+    animation: 0.8s 0s tab_show ease-in;
+}
+
+@keyframes tab_show{
+    from{left:-100%;opacity:0;}
+    to{left:0px;opacity:1;}
 }

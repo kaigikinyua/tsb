@@ -1,6 +1,24 @@
 0
-00:00:01,516 ---> 00:00:02,516
-Hello World
+00:00:08,454 --> 00:00:011,454
+Could we pretend that airplanes
+
 1
-00:00:03,790 ---> 00:00:04,790
-Hello Galaxy
+00:00:011,554 --> 00:00:013,034
+In the night sky
+
+2
+00:00:013,134 --> 00:00:014,616
+Are like shooting stars
+
+3
+00:00:014,716 --> 00:00:016,920
+I could realy use a wish right now
+
+4
+00:00:017,020 --> 00:00:017,955
+I could realy use a wish right now
+
+5
+00:00:018,055 --> 00:00:019,526
+I could realy use a wish right now
+

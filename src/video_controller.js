@@ -23,7 +23,6 @@ editor.addEventListener('keydown',(e)=>{
         addTransCription({"text":text,"currentTime":video.currentTime})
         text.value=null
         text.innerHTML=null
-        console.log("pushing transcription")
     }else{
 
     }
