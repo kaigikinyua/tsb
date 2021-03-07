@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/css/pages/tsbr.css">
     <link rel="stylesheet" href="./static/css/components/preview.css">
     <link rel="stylesheet" href="./static/css/all.min.css">
+    <link rel="stylesheet" href="./static/css/components/settings.css">
     <link rel="stylesheet" href="./static/css/themes/light.css" id="theme"/>
 </head>
 <body>
@@ -74,7 +75,9 @@
         </div>
         <div class="tab_content">
             <div class="transcriptions" id="transcriptions_preview">
-                
+                <div v-for="t in transcriptions">
+                    <transcription v-bind:tObject="t"></transcription>
+                </div>
             </div>
             <!-- <div class="add">
                 <button>Add</button>
@@ -89,19 +92,34 @@
             <h3>Settings</h3>
         </div>
         <div class="tab_content">
-            <div class="projects">
-                <div class="project">
-                    <span>Project Name</span>
-                    <!--load project option-->
-                    <!--Delete project option-->
-                </div>
-            </div>
             <div class="deltas">
-                <span>
+                <div>
+                    Save After:
+                    <select name="saveDelta" class="input input_field_color" id="saveDelta">
+                        <option value="30">30 seconds</option>
+                        <option value="60">1 minute</option>
+                        <option value="600">10 minutes</option>
+                        <option value="1800">30 minutes</option>
+                        <option value="3600">1 hour</option>
+                    </select>
+                </div>
+                <div>
+                    Save Location: 
+                    <select name="save_location" class="input input_field_color" id="saveType">
+                        <option value="media_location" selected>Media Location</option>
+                        <option value="userDefined">Select Default</option>
+                    </select>
+                </div>
+                <div id="selected_location">
+                    Selected Location: <p id="selected_location"></p>
+                </div>
+                <hr></hr>
+                <div>
                     Display Delta: <input type="number" class="input input_field_color"/>
-                </span>
+                </div>
+                <hr></hr>
+                <button class="call_to_action">Reset Settings</button>
             </div>
-
         </div>
         <div class="close" onclick="closeTab()">
             <i class="fa fa-window-close"></i>
@@ -112,6 +130,8 @@
 <script>
 
 </script>
+<script src="./vue.js"></script>
+<script src="./settings.js"></script>
 <script src="video_controller.js"></script>
 <script src="files.js"></script>
 <script src="ui.js"></script>

@@ -67,4 +67,9 @@ button {
   -webkit-box-shadow: 1px 1px 50px 10px #212229;
           box-shadow: 1px 1px 50px 10px #212229;
 }
+
+section.tab {
+  background: white;
+  color: #212229;
+}
 /*# sourceMappingURL=light.css.map */

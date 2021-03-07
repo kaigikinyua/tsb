@@ -3,7 +3,6 @@ section.tab{
     z-index: 11;
     //left:0px;
     top:0px;
-    background:white;
     height:100vh;
     width:50%;
     text-align: center;
@@ -59,6 +58,35 @@ div.transcriptions{
     }
 }
 
-input.inputAuto{
-    width:auto;
+div.transcription_element{
+    padding:5px;
+    margin:10px 0px;
+    display: flex;
+    input{
+        border:1px solid transparent;
+        margin:3px;
+    }
+    input.text{
+        position: relative;
+        width:100%;
+    }
+    div.first{
+        display: flex;
+        flex-direction: column;
+        max-width: 100px;
+        button{
+            background:none;
+        }
+    }
+    div.time{
+        display: flex;
+    }
+    div.time_fields_container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input.inputSmall{
+    max-width:70px;
 }

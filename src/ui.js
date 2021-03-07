@@ -18,7 +18,7 @@ function openTab(tabID){
 //preview
 function openPreview(){
     openTab('preview_window')
-    loadTranscriptions()
+    //loadTranscriptions()
 }
 
 

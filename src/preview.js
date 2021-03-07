@@ -1,7 +1,7 @@
 var { getTranscription } =require('./transcription.js')
 var tContainer=document.getElementById('transcriptions_preview')
 
-function loadTranscriptions(){
+/*function loadTranscriptions(){
     tContainer.innerHTML=''
     var transcriptions=getTranscription()
     transcriptions.forEach(function (t,index){
@@ -10,8 +10,10 @@ function loadTranscriptions(){
 }
 
 function renderTranscriptions(t,index){    
-    var tContent=document.createElement('p')
+    var tContent=document.createElement('div')
+    tContent.classList.add('transcription_element')
     tContent.dataset['index']=index
+    tContent.id=`tElement_${index}`
     var index_c=tIndexComponent(index)
     var start=tStartComponent(t,index)
     var end=tEndComponent(t,index)
@@ -32,15 +34,15 @@ function tIndexComponent(index){
     input.name=`index_${index}`
     input.addEventListener('keyup',(e)=>{
         console.log('edditing index')
+        console.log(e.target.parentNode)
     })
     return input
 }
 
 function tStartComponent(t,index){
     var input=document.createElement('input')
-    input.value=t.start
+    input.value=t.startSec
     //input.classList.add('inputSmall')
-    input.dataset['index']=index
     input.name=`start_${index}`
     input.addEventListener('keyup',(e)=>{
         console.log('edditing start')
@@ -50,9 +52,8 @@ function tStartComponent(t,index){
 
 function tEndComponent(t,index){
     var input=document.createElement('input')
-    input.value=t.end
+    input.value=t.endSec
     //input.classList.add('inputSmall')
-    input.dataset['index']=index
     input.name=`end_${index}`
     input.addEventListener('keyup',(e)=>{
         console.log('edditing end')
@@ -62,30 +63,45 @@ function tEndComponent(t,index){
 function tTextComponent(t,index){
     var input=document.createElement('input')
     input.value=t.text
-    input.dataset['index']=index
     input.name=`text_${index}`
     input.addEventListener('keyup',(e)=>{
         console.log('edditing text')
     })
     return input
-}
-
-function closePreview(){
-    //clear rendered transcriptions
-}
-function editTranscription(){
-
-}
-function editStart(){
-
-}
-function editEnd(){
-
-}
-
-/*function playVideoPreview(){
-
 }*/
+new Vue({
+    el:'#transcriptions_preview',
+    data:{
+        transcriptions:getTranscription(),
+    }
+})
+
+Vue.component('transcription',{
+    props:['tObject'],
+    template:`
+        <div class='transcription_element'>
+            <div class='first'>
+                <input type='number' class='inputSmall' value='1'>
+                <button><i class='fa fa-trash'></i></button>
+            </div>
+            <div>
+                <input type='text' class='text' value='{{ tObject.text }}'/>
+                <div class='time'>
+                    <div class='time_fields_counter'>
+                        <small>Start</small>
+                        <input type='text' value='{{ tObject.start }}'>
+                    </div>
+                    <div class='time_fields_counter'>
+                        <small>End</small>
+                        <input type='text' value={{tObject.end}}>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+}) 
+
+
 module.exports={
     loadTranscriptions
 }

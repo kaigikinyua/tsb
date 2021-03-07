@@ -9,7 +9,8 @@ class SaveSystem{
         console.log(this.filepath)
     }
     fetchData(){
-        return 'This is the data'
+        var data=fs.readFileSync(this.filepath,'utf-8')
+        return data
     }
     saveData(data){
         fs.writeFile(this.filepath, data, "utf-8", (error, data) => {
@@ -34,6 +35,20 @@ class SaveSystem{
         console.log(exportDataString)
     }
 }
+
+function saveConfigs(configs){
+    // var filepath='./data/configs.json'
+    // var s=new SaveSystem(filepath)
+    // var data=s.fetchData()
+    // console.log(data)
+}
+function getConfigs(){
+    var filepath='./data/configs.json'
+    var s=new SaveSystem(filepath)
+    var data=s.fetchData()
+    console.log(data)
+}
+
 function saveTranscription(){
     var videoPath=getVideoSrc()
    if(videoPath!=undefined && videoPath!=null){

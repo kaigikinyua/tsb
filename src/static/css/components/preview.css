@@ -2,7 +2,6 @@ section.tab {
   position: fixed;
   z-index: 11;
   top: 0px;
-  background: white;
   height: 100vh;
   width: 50%;
   text-align: center;
@@ -71,7 +70,56 @@ div.transcriptions p {
   margin: 5px 0px;
 }
 
-input.inputAuto {
-  width: auto;
+div.transcription_element {
+  padding: 5px;
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.transcription_element input {
+  border: 1px solid transparent;
+  margin: 3px;
+}
+
+div.transcription_element input.text {
+  position: relative;
+  width: 100%;
+}
+
+div.transcription_element div.first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100px;
+}
+
+div.transcription_element div.first button {
+  background: none;
+}
+
+div.transcription_element div.time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.transcription_element div.time_fields_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+input.inputSmall {
+  max-width: 70px;
 }
 /*# sourceMappingURL=preview.css.map */

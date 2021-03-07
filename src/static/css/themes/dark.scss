@@ -59,3 +59,8 @@ button{
 .tab_show{
     box-shadow: 1px 1px 50px 10px $shadowColor;
 }
+//sect 2
+section.tab{
+    background:lighten($shadowColor,5%);
+    color:darken($prim_color,10%);
+}

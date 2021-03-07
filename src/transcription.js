@@ -23,11 +23,13 @@ function addTransCription({text,currentTime}){
     }else{
         start=currentTime-1
     }
+    var startSec=start
+    var endSec=currentTime
     start=synchTransCription(start)
     lastTsEndTime=currentTime
     var start=convertToSrtTimeFormat(start)
     var end=convertToSrtTimeFormat(currentTime)
-    transCription.push({"start":start,"end":end,"text":text})
+    transCription.push({"start":start,"end":end,"text":text,"startSec":startSec,"endSec":endSec})
     var output=document.getElementById("output")
     var append=`<small>${start}</small><small>${end}</small>${text}`
     var p=document.createElement('p')
