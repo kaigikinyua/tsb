@@ -1,6 +1,6 @@
 const fs=require('fs')
 var { getTranscription }=require('./transcription')
-var { video }=require('./transcription.js')
+var { getVideoSrc }=require('./transcription.js')
 //console.log(convertToSrtTimeFormat(7200.000))
 class SaveSystem{
     filepath
@@ -35,16 +35,17 @@ class SaveSystem{
     }
 }
 function saveTranscription(){
-   // if(video.pathToVideo!=undefined && video.pathToVideo!=null){
+    var videoPath=getVideoSrc()
+   if(videoPath!=undefined && videoPath!=null){
+        var filePath=videoPath.split('.')[0]+'.srt'
+        var srtFilePath=filePath.split('file://')[1]
         var data=getTranscription()
-        //change parameter of SaveSystem('path') to video.pathToVideo
-        var s=new SaveSystem("./tests/file.srt")
-        //s.saveData(JSON.stringify(data))
+        var s=new SaveSystem(srtFilePath)
         if(data!=undefined && data.length>0){
             s.exportToSrtFile(data)
         }
-    /*}else{
+    }else{
         console.log("Please ensure you have loaded a video")
-    }*/
+    }
 }
 setInterval(saveTranscription(),3000)

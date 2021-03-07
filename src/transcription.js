@@ -5,6 +5,8 @@ var video={
     durationFormated:null,
     pathToVideo:null
 }
+function getVideoSrc(){return video.pathToVideo}
+function setVideoSrc(src){video.pathToVideo=src}
 
 const timeDeltas={
     processing:3,
@@ -83,6 +85,8 @@ function deciFormat(x){
 
 module.exports={
     video,
+    getVideoSrc,
+    setVideoSrc,
     timeDeltas,
     addTransCription,
     getTranscription,

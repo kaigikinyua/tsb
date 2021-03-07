@@ -1,4 +1,4 @@
-var { addTransCription,video }=require ('./transcription.js');
+var { addTransCription,video,setVideoSrc }=require ('./transcription.js');
 const { deciFormat }=require('./transcription.js')
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
@@ -115,6 +115,7 @@ function openDialog(){
         setTimeout(resetVideo(),1000)
         videoElement.src=result.filePaths[0]
         videoElement.pathToVideo=videoElement.src.toString()
+        setVideoSrc(videoElement.pathToVideo)
     })
     .catch((err)=>{
         console.log(err)
