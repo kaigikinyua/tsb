@@ -41,17 +41,12 @@ input{
     padding:5px 10px;
     outline:none;
 }
-div.adjust{
-    display: flex;
-    justify-content: space-evenly;
-    height:100px;
-}
 div.transcriptions{
     position: relative;
     max-width: 80%;
     left:50%;
     transform: translateX(-50%);
-    height: 200px;
+    height: 90%;
     overflow-y:scroll;
     overflow-x:hidden;
     text-align: left;
@@ -62,4 +57,8 @@ div.transcriptions{
         padding:10px;
         margin:5px 0px;
     }
+}
+
+input.inputAuto{
+    width:auto;
 }

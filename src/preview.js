@@ -12,8 +12,62 @@ function loadTranscriptions(){
 function renderTranscriptions(t,index){    
     var tContent=document.createElement('p')
     tContent.dataset['index']=index
-    tContent.innerHTML=`<small>${t.start}</small><small>${t.end}</small>${t.text}`
+    var index_c=tIndexComponent(index)
+    var start=tStartComponent(t,index)
+    var end=tEndComponent(t,index)
+    var text_c=tTextComponent(t,index)
+    var elements=[index_c,start,end,text_c]
+    elements.forEach(e=>{
+        tContent.appendChild(e)
+    })
+    // tContent.innerHTML=`${index_c}${start}${text_c}${end}`
     tContainer.appendChild(tContent)
+}
+function tIndexComponent(index){
+    var input=document.createElement('input')
+    input.classList.add("inputSmall")
+    input.type='number'
+    input.value=index
+    input.dataset['index']=index
+    input.name=`index_${index}`
+    input.addEventListener('keyup',(e)=>{
+        console.log('edditing index')
+    })
+    return input
+}
+
+function tStartComponent(t,index){
+    var input=document.createElement('input')
+    input.value=t.start
+    //input.classList.add('inputSmall')
+    input.dataset['index']=index
+    input.name=`start_${index}`
+    input.addEventListener('keyup',(e)=>{
+        console.log('edditing start')
+    })
+    return input
+}
+
+function tEndComponent(t,index){
+    var input=document.createElement('input')
+    input.value=t.end
+    //input.classList.add('inputSmall')
+    input.dataset['index']=index
+    input.name=`end_${index}`
+    input.addEventListener('keyup',(e)=>{
+        console.log('edditing end')
+    })
+    return input
+}
+function tTextComponent(t,index){
+    var input=document.createElement('input')
+    input.value=t.text
+    input.dataset['index']=index
+    input.name=`text_${index}`
+    input.addEventListener('keyup',(e)=>{
+        console.log('edditing text')
+    })
+    return input
 }
 
 function closePreview(){
