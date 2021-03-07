@@ -1,3 +1,4 @@
+var { loadTranscriptions }=require('./preview.js')
 var darkMode=false
 
 function closeTab(){
@@ -17,6 +18,7 @@ function openTab(tabID){
 //preview
 function openPreview(){
     openTab('preview_window')
+    loadTranscriptions()
 }
 
 
