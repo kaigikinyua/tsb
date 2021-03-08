@@ -75,12 +75,11 @@
         </div>
         <div class="tab_content">
             <div class="transcriptions" id="transcriptions_preview">
-
                 <div class="transcription">
                     <div class='fast_actions'>
                         Text:
                         <input type="text"class="text">
-                        <i class="fa fa-trash"></i>
+                        <button><i class="fa fa-trash"></i></button>
                     </div>
                     <div class='timmer'>
                         <span>
@@ -91,11 +90,18 @@
                         </span>
                     </div>
                 </div>
-
             </div>
-            <!-- <div class="add">
-                <button>Add</button>
-            </div> -->
+            <div class="add">
+                <button id="synchTs" onclick="synchTranscriptions()">Synch Transcription</button>
+                <button id='addTButton'>Add</button>
+                <div class="add_transcription" id="add_transcription">
+                    <span>Text: <input class="input input_field_color"type="text" name="new_transcription"/></span>
+                    <span>Start: <input class="input input_field_color"type="text" name="newTstart"/></span>
+                    <span>End: <input class="input input_field_color"type="text" name="newTend"/></span>
+                    <span>Index: <input class="input input_field_color"type="text" name="newTindex"/></span>
+                    <button>Add Transcription</button>
+                </div>
+            </div>
         </div>
         <div class="close" onclick="closeTab()">
             <i class="fa fa-window-close"></i>
@@ -149,5 +155,5 @@
 <script src="video_controller.js"></script>
 <script src="files.js"></script>
 <script src="ui.js"></script>
-<!--<script src='./preview.js'></script>-->
+<script src='./preview.js'></script>
 </html>

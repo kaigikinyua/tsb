@@ -16,6 +16,26 @@ var lastTsendTime=null
 function getTranscription(){
     return transCription
 }
+function setTfromSec(t){
+    transCription=[]
+    var output=document.getElementById("output")
+    output.innerHTML=''
+    t.forEach(tsption=>{
+        var start=convertToSrtTimeFormat(tsption.startSec)
+        var end=convertToSrtTimeFormat(tsption.endSec)
+        transCription.push({"start":start,"end":end,"text":tsption.text,"startSec":tsption.startSec,"endSec":tsption.endSec})
+        var append=`<small>${start}</small><small>${end}</small>${tsption.text}`
+        var p=document.createElement('p')
+        p.innerHTML=append
+        output.appendChild(p)
+    });
+    //add check to confirm new ts
+    return true
+}
+function setTfromsrt(t){
+
+}
+
 function addTransCription({text,currentTime}){
     var start;
     if(currentTime>timeDeltas.processing){
@@ -94,4 +114,5 @@ module.exports={
     getTranscription,
     convertToSrtTimeFormat,
     deciFormat,
+    setTfromSec
 }
