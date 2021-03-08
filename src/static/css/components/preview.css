@@ -70,56 +70,29 @@ div.transcriptions p {
   margin: 5px 0px;
 }
 
-div.transcription_element {
-  padding: 5px;
-  margin: 10px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-div.transcription_element input {
-  border: 1px solid transparent;
-  margin: 3px;
-}
-
-div.transcription_element input.text {
+div.transcription input {
   position: relative;
-  width: 100%;
+  width: 80%;
+  border: 1px solid transparent;
 }
 
-div.transcription_element div.first {
+div.transcription div.fast_actions {
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-div.transcription_element div.first button {
-  background: none;
-}
-
-div.transcription_element div.time {
+div.transcription div.timmer {
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-div.transcription_element div.time_fields_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-input.inputSmall {
-  max-width: 70px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=preview.css.map */

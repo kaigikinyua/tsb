@@ -58,35 +58,21 @@ div.transcriptions{
     }
 }
 
-div.transcription_element{
-    padding:5px;
-    margin:10px 0px;
-    display: flex;
+div.transcription{
+    //background:darken(white,20%);
     input{
-        border:1px solid transparent;
-        margin:3px;
-    }
-    input.text{
         position: relative;
-        width:100%;
+        width:80%;
+        border:1px solid transparent;
     }
-    div.first{
+    div.fast_actions{
+        padding:5px;
         display: flex;
-        flex-direction: column;
-        max-width: 100px;
-        button{
-            background:none;
-        }
+        justify-content: space-between;
     }
-    div.time{
+    div.timmer{
+        padding:5px;
         display: flex;
+        justify-content: space-between;
     }
-    div.time_fields_container{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-input.inputSmall{
-    max-width:70px;
 }

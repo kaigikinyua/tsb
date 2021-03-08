@@ -75,9 +75,23 @@
         </div>
         <div class="tab_content">
             <div class="transcriptions" id="transcriptions_preview">
-                <div v-for="t in transcriptions">
-                    <transcription v-bind:tObject="t"></transcription>
+
+                <div class="transcription">
+                    <div class='fast_actions'>
+                        Text:
+                        <input type="text"class="text">
+                        <i class="fa fa-trash"></i>
+                    </div>
+                    <div class='timmer'>
+                        <span>
+                            Start: <input type="text" name="start"/>
+                        </span>
+                        <span>
+                            End: <input type="text" name="end">
+                        </span>
+                    </div>
                 </div>
+
             </div>
             <!-- <div class="add">
                 <button>Add</button>
@@ -135,4 +149,5 @@
 <script src="video_controller.js"></script>
 <script src="files.js"></script>
 <script src="ui.js"></script>
+<!--<script src='./preview.js'></script>-->
 </html>
