@@ -8,12 +8,21 @@ will take care of the document formatting.
 
 ## How do I use TSBR?
 1. Load the video file.
-2. Press play (CTRL + P while on the editor to play).
+2. Press play (CTRL + SPACE while on the editor to play).
 3. Type what you hear.
 4. Pause the video( CTRL + SPACEBAR while on the text editor)
 5. Submit what you have typed( CTRL + N while on the editor) 
 6. After you have finished transcribing you can open the preview window to synch your transcription
 7. Save the transcription after you are happy with it.
+
+## Shorcut Keys
+1. While in the textarea/text editor
+    * CTRL + SPACE - Play or pause the video
+    * CTRL + N - Submit the transcription
+
+2. While on the application page
+    ---
+
 
 ## Supported file formats
 TSBR as of now supports exporting transcriptions to srt transcription file 
