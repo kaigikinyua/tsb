@@ -86,20 +86,20 @@
                             Start: <input type="text" name="start"/>
                         </span>
                         <span>
-                            End: <input type="text" name="end">
+                            End: <input type="text" name="end"/>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="add">
                 <button id="synchTs" onclick="synchTranscriptions()">Synch Transcription</button>
-                <button id='addTButton'>Add</button>
+                <button id='addTButton' onclick="openAddTmenu()">Add</button>
                 <div class="add_transcription" id="add_transcription">
                     <span>Text: <input class="input input_field_color"type="text" name="new_transcription"/></span>
                     <span>Start: <input class="input input_field_color"type="text" name="newTstart"/></span>
                     <span>End: <input class="input input_field_color"type="text" name="newTend"/></span>
                     <span>Index: <input class="input input_field_color"type="text" name="newTindex"/></span>
-                    <button>Add Transcription</button>
+                    <button onclick="addNewTranscription()">Add Transcription</button>
                 </div>
             </div>
         </div>

@@ -28,7 +28,7 @@ function changeEnd(index){
 }
 function deleteTranscription(index){
     tsEdit=true
-    delete transcriptions[index]
+    transcriptions.splice(index,1)
     renderTranscription()
 }
 function openAddTmenu(){
@@ -47,17 +47,8 @@ function addNewTranscription(){
     var start=document.getElementsByName('newTstart')[0].value
     var end=document.getElementsByName('newTend')[0].value
     var tindex=document.getElementsByName('newTindex')[0].value
-    var copyTranscription=[]
-    transcriptions.forEach(function(index,t){
-        if(index==tindex){
-            copyTranscription[index]={"start":'',"end":'',"text":text,"startSec":start,"endSec":end}
-        }else if(index>tindex){
-            copyTranscription[index+1]=t
-        }else{
-            copyTranscription[index]=t
-        }
-    })
-    transcriptions=copyTranscription
+    var t={"start":'',"end":'',"text":text,"startSec":start,"endSec":end}
+    transcriptions.splice(parseInt(tindex),0,t)
     renderTranscription()
 }
 function synchTranscriptions(){
