@@ -48,22 +48,42 @@ div.transcriptions{
 }
 
 div.transcription{
-    //background:darken(white,20%);
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    width:80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:20px;
     input{
-        position: relative;
-        width:80%;
+        padding:10px;
         border:1px solid transparent;
+        outline: none;
     }
-    div.fast_actions{
-        padding:5px;
-        display: flex;
-        justify-content: space-between;
+    button{
+        background:none;
+        color:crimson;
+        font-size: 25px;
     }
-    div.timmer{
-        padding:5px;
-        display: flex;
-        justify-content: space-between;
+    small{
+        position: relative;
+        margin-top:10px;
     }
+}
+div.fast_actions{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    padding:10px;
+}
+div.block_field{
+    display: flex;
+    flex-direction: row;
+}
+div.time_container{
+    display: flex;
+    justify-content: space-between;
 }
 div.add{
     display: flex;

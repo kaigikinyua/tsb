@@ -56,24 +56,65 @@ div.transcriptions p {
   margin: 5px 0px;
 }
 
-div.transcription input {
+div.transcription {
   position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 80%;
-  border: 1px solid transparent;
-}
-
-div.transcription div.fast_actions {
-  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 20px;
 }
 
-div.transcription div.timmer {
-  padding: 5px;
+div.transcription input {
+  padding: 10px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+div.transcription button {
+  background: none;
+  color: crimson;
+  font-size: 25px;
+}
+
+div.transcription small {
+  position: relative;
+  margin-top: 10px;
+}
+
+div.fast_actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  padding: 10px;
+}
+
+div.block_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+div.time_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

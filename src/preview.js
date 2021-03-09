@@ -61,25 +61,20 @@ function synchTranscriptions(){
 function createTComponent(t,index){
     var tComponent=document.createElement('div')
     tComponent.classList.add('transcription')
-    var fastActions=document.createElement('div')
-    fastActions.classList.add('fast_actions')
-    fastActions.innerHTML=`
-        Text:
-        <input type='text' class='text' value='${t.text}' name='tText${index}' onkeyup='changeText(${index})'/>
+    tComponent.innerHTML=`
+        <div class='fast_actions'>
+            <input type='text' class='preview_transcription' value='${t.text}' name='tText${index}' onkeyup='changeText(${index})'/>
+            <div class='time_container'>
+                <div class="block_field">
+                    <small>Start</small><input class="time" type='text' value='${t.startSec}' name='start${index}' onkeyup='changeStart(${index})'/>
+                </div>
+                <div class="block_field">
+                    <small>End</small><input class="time" type='text' value='${t.endSec}' name='end${index}' onkeyup='changeEnd(${index})'/>
+                </div>
+            </div>
+        </div>
         <button onclick='deleteTranscription(${index})'><i class='fa fa-trash'></i></button>
     `
-    var timmer=document.createElement('div')
-    timmer.classList.add('timmer')
-    timmer.innerHTML=`
-        <span>
-            Start: <input type='text' value='${t.startSec}' name='start${index}' onkeyup='changeStart(${index})'/>
-        </span>
-        <span>
-            End: <input type='text' value='${t.endSec}' name='end${index}' onkeyup='changeEnd(${index})'/>
-        </span>
-    `
-    tComponent.appendChild(fastActions)
-    tComponent.appendChild(timmer)
     return tComponent
 }
 
