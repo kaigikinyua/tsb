@@ -31,6 +31,4 @@ function openDialog(){
         }
     )
 }
-
-
 app.on('ready',createWindow)

@@ -1,4 +1,4 @@
-# TSBR
+# TSBR 
 
 ## What is TSBR?
 TSBR is a desktop application dedicated to enabling a user to transcribe
@@ -21,7 +21,6 @@ will take care of the document formatting.
     * CTRL + N - Submit the transcription
 
 2. While on the application page
-    ---
 
 
 ## Supported file formats

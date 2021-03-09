@@ -5,13 +5,13 @@ saveDelta.onchange=()=>{
     changeSaveDelta()
 }
 changeSave.onchange=(e)=>{
-    //var children=e.target.children
     if(e.target.value='media_location'){
         selectedLocation.style.display="none"
         changeDefaultSave()
     }
     else{
-        changeDefaultSave()
+        //open file dialog and pic a DIRECTORY
+        
     }
 }
 
