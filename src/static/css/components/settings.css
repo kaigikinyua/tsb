@@ -9,10 +9,59 @@ div.deltas {
 div.deltas div {
   padding: 10px;
   text-align: left;
+}
+
+span.field_inline {
+  position: relative;
+  width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  margin-top: 10px;
+}
+
+label.checkbox_label {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: lightgray;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+input[type=checkbox] {
+  height: 0px;
+  width: 0px;
+}
+
+span.checkbox {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+}
+
+span.checkbox::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  width: 5px;
+  height: 13px;
+  background: none;
+  border-right: 5px solid green;
+  border-bottom: 5px solid green;
+  border-radius: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: none;
+}
+
+label.checkbox_label input[type=checkbox]:checked ~ span.checkbox::after {
+  display: block;
 }
 
 hr {

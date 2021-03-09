@@ -72,7 +72,7 @@
     <section class="tab tab_hidden" id="preview_window">
         <div class="appbar">
             <h3>Preview</h3>
-        </div>
+        </div> 
         <div class="tab_content">
             <div class="transcriptions" id="transcriptions_preview">
                 <div class="transcription">
@@ -114,26 +114,43 @@
         <div class="tab_content">
             <div class="deltas">
                 <div>
-                    Save After:
-                    <select name="saveDelta" class="input input_field_color" id="saveDelta">
-                        <option value="30">30 seconds</option>
-                        <option value="60">1 minute</option>
-                        <option value="600">10 minutes</option>
-                        <option value="1800">30 minutes</option>
-                        <option value="3600">1 hour</option>
-                    </select>
+                    <span class="field_inline">
+                        Save After:
+                        <select name="saveDelta" class="input input_field_color" id="saveDelta">
+                            <option value="30">30 seconds</option>
+                            <option value="60">1 minute</option>
+                            <option value="600">10 minutes</option>
+                            <option value="1800">30 minutes</option>
+                            <option value="3600">1 hour</option>
+                        </select>
+                    </span>
                 </div>
                 <div>
-                    Default Saving Folder:
-                    <input type="checkbox" value="default" name="saveLocation" id="saveType"/> 
+                    <span class="field_inline">
+                        Default Saving Folder:
+                        <label for="saveType" class="checkbox_label">
+                            <!--for this to work input should preceed span for the css ~ to work-->
+                            <input type="checkbox" value="default" name="saveLocation" id="saveType"/> 
+                            <span class="checkbox"></span>
+                        </label>
+                    </span>
                 </div>
                 <div id="selected_location">
-                    Selected Location: <p id="location_path"></p>
-                    <input type="checkbox" name="saveLocationDefault" id="saveTypeDefault"/>
+                    <span class="field_inline">Selected Location: <p id="location_path"></p></span>
+                    <span class="field_inline">
+                        Use System Default
+                        <label for="saveTypeDefault" class="checkbox_label">
+                            <input type="checkbox" name="saveLocationDefault" id="saveTypeDefault"/>
+                            <span class="checkbox"></span>
+                        </label>
+                    </span>
                 </div>
                 <hr></hr>
                 <div>
-                    Display Delta: <input type="number" class="input input_field_color"/>
+                    <span class='field_inline'>
+                        Display Delta:
+                        <input type="number" class="input input_field_color"/>
+                    </span>
                 </div>
                 <hr></hr>
                 <button class="call_to_action">Reset Settings</button>
