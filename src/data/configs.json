@@ -1,14 +1,1 @@
-{
-    "settings":[
-        {"saveDelta":30000},
-        {"saveLocation":"default"},
-        {"theme":"light"},
-        {"displayDeltaSeconds":1}
-    ],
-    "dafaults":[
-        {"saveDelta":30000},
-        {"saveLocation":"default"},
-        {"theme":"light"},
-        {"displayDeltaSeconds":1}
-    ]
-}
+{"settings":[{"saveDelta":30000},{"saveLocation":"default"},{"theme":"light"},{"displayDeltaSeconds":1}],"dafaults":[{"saveDelta":30000},{"saveLocation":"default"},{"theme":"light"},{"displayDeltaSeconds":1}],"themes":[{"name":"","css_path":""}]}

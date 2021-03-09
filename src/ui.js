@@ -1,6 +1,4 @@
 var { renderTranscription }=require('./preview.js')
-var darkMode=false
-
 function closeTab(){
     var tabs=document.querySelectorAll('section.tab')
     tabs.forEach(tab=>{
@@ -25,16 +23,4 @@ function openPreview(){
 //settings
 function openSettings(){
     openTab('settings')
-}
-
-//theme
-function changeTheme(){
-    var stylesheet=document.getElementById('theme')
-    if(darkMode==false){
-        stylesheet.href="./static/css/themes/dark.css"
-        darkMode=true
-    }else{
-        stylesheet.href='./static/css/themes/light.css'
-        darkMode=false
-    }
 }

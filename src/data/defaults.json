@@ -1,0 +1,8 @@
+{
+    "dafaults":[
+        {"saveDelta":30000},
+        {"saveLocation":"default"},
+        {"theme":"light"},
+        {"displayDeltaSeconds":1}
+    ]
+}
