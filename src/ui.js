@@ -1,4 +1,5 @@
 var { renderTranscription }=require('./preview.js')
+var { renderProjects }=require('./projects.js')
 function closeTab(){
     var tabs=document.querySelectorAll('section.tab')
     tabs.forEach(tab=>{
@@ -18,8 +19,10 @@ function openPreview(){
     openTab('preview_window')
     renderTranscription()
 }
-
-
+function openProjectsTab(){
+    openTab('projects_tab')
+    renderProjects()
+}
 //settings
 function openSettings(){
     openTab('settings')

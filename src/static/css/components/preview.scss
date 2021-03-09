@@ -1,15 +1,12 @@
 section.tab{
     position: fixed;
     z-index: 11;
-    //left:0px;
     top:0px;
     height:100vh;
-    width:50%;
     text-align: center;
+    width:50%;
     //box-shadow: 1px 1px 20px 20px rgba(10,10,10,0.5);
 }
-
-
 div.appbar{
     padding:10px;
 }
@@ -107,3 +104,4 @@ div.add_transcription{
         justify-content: space-evenly;
     }
 }
+

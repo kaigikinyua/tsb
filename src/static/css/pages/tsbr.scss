@@ -1,15 +1,19 @@
-
+body{
+    overflow: hidden;
+}
 div.pad,div.player{
     position: relative;
-    height:100%;
-    display: grid;
-    //grid-template-rows: 1fr 1fr;
-    //grid-row-gap:10px;
-    display: flex;
-    flex-direction: column;
+    height:auto;
     padding:10px;
-    //padding-bottom: 100px;
-    justify-content: space-between;
+}
+div.pad{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+div.player{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 div.output{
@@ -34,7 +38,7 @@ div.output_text small{
 textarea{
     position: relative;
     width:100%;
-    height:300px;
+    height:200px;
 }
 div.video_player{
     position: relative;

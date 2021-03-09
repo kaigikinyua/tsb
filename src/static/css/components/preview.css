@@ -3,8 +3,8 @@ section.tab {
   z-index: 11;
   top: 0px;
   height: 100vh;
-  width: 50%;
   text-align: center;
+  width: 50%;
 }
 
 div.appbar {

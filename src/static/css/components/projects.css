@@ -1,0 +1,48 @@
+div.project_list {
+  position: relative;
+  height: 90%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+div.project {
+  margin-top: 10px;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  font-weight: lighter;
+  font-size: 1.1em;
+  max-width: 300px;
+}
+
+div.project_actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.project_actions button {
+  background: none;
+}
+
+div.project_actions button.edit {
+  color: lightgreen;
+}
+
+div.project_actions button.delete {
+  color: crimson;
+}
+/*# sourceMappingURL=projects.css.map */

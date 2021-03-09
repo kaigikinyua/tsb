@@ -14,8 +14,8 @@ const timeDeltas={
 }
 
 var transCription=[
-    {"start":'00:12',"end":'00:13',"text":"Hardcoded Transcription in transcription.js","startSec":12.02,"endSec":13.03},
-    {"start":'00:12',"end":'00:13',"text":"Hardcoded Transcription in transcription.js","startSec":12.02,"endSec":13.03}
+    //{"start":'00:12',"end":'00:13',"text":"Hardcoded Transcription in transcription.js","startSec":12.02,"endSec":13.03},
+    //{"start":'00:12',"end":'00:13',"text":"Hardcoded Transcription in transcription.js","startSec":12.02,"endSec":13.03}
 ]
 var lastTsendTime=null
 function getTranscription(){return transCription}
