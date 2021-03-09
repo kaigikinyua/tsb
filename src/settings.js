@@ -28,7 +28,7 @@ function loadSettings(){
     var data=s.fetchData()
     configs=JSON.parse(data);
     var stylesheet=document.getElementById('theme')
-    if(configs.settings[2].theme="dark"){
+    if(configs.settings[2].theme=="dark"){
         stylesheet.href='./static/css/themes/dark.css'
         darkMode=true
     }else{
