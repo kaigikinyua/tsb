@@ -124,14 +124,12 @@
                     </select>
                 </div>
                 <div>
-                    Save Location: 
-                    <select name="save_location" class="input input_field_color" id="saveType">
-                        <option value="media_location" selected>Media Location</option>
-                        <option value="userDefined">Select Default</option>
-                    </select>
+                    Default Saving Folder:
+                    <input type="checkbox" value="default" name="saveLocation" id="saveType"/> 
                 </div>
                 <div id="selected_location">
-                    Selected Location: <p id="selected_location"></p>
+                    Selected Location: <p id="location_path"></p>
+                    <input type="checkbox" name="saveLocationDefault" id="saveTypeDefault"/>
                 </div>
                 <hr></hr>
                 <div>

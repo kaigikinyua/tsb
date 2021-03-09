@@ -1,3 +1,4 @@
+var { configs } = require('settings.js')
 var video={
     IsPlaying:false,
     currentTime:0,
@@ -9,13 +10,13 @@ function getVideoSrc(){return video.pathToVideo}
 function setVideoSrc(src){video.pathToVideo=src}
 
 const timeDeltas={
-    processing:3,
+    processing:configs.settings.displayDeltaSeconds,
 }
+
 var transCription=[]
 var lastTsendTime=null
-function getTranscription(){
-    return transCription
-}
+function getTranscription(){return transCription}
+
 function setTfromSec(t){
     transCription=[]
     var output=document.getElementById("output")
@@ -40,9 +41,7 @@ function addTransCription({text,currentTime}){
     var start;
     if(currentTime>timeDeltas.processing){
         start=currentTime-timeDeltas.processing
-    }else{
-        start=currentTime-1
-    }
+    }else{start=currentTime-1}
     var startSec=start
     var endSec=currentTime
     start=synchTransCription(start)

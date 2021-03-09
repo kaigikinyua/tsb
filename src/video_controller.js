@@ -5,10 +5,7 @@ const playPauseButton=document.getElementById("playPause")
 const repeatButton=document.getElementById("repeat")
 //volume to be implemented latter on
 const editor=document.getElementById('editor')
-var repeat={
-    start:0,
-    end:0,
-}
+//var repeat={start:0,end:0,}
 
 window.onload=()=>{
     resetVideo()
@@ -41,9 +38,8 @@ videoElement.addEventListener('timeupdate',(e)=>{
     //console.log(percent)
 });
 
-playPauseButton.addEventListener('click',(e)=>{
-    playPause()
-})
+playPauseButton.addEventListener('click',(e)=>{playPause()})
+
 function playPause(){
     if(video.IsPlaying){pauseVideo()}
     else{playVideo()}
@@ -64,12 +60,14 @@ function playVideo(){
     videoElement.play();
     p.innerHTML="<i class='fa fa-pause'></i>"
 }
+
 function pauseVideo(){
     var p=document.getElementById("playPause")
     p.innerHTML=null
     videoElement.pause();
     p.innerHTML="<i class='fa fa-play'></i>"
 }
+
 function upDateVideoTime(){
     var timer=document.getElementById("timer")
     timer.innerHTML=convertSeconds(videoElement.currentTime)
@@ -83,27 +81,30 @@ function upDateVideoTime(){
     }
 }
 
-
 function convertSeconds(time){
     var t=0;
     if(time<60){
-        var s=deciFormat(Math.floor(time))
+        var s=checkSeconds(deciFormat(Math.floor(time)))
         var t=`00:${s}`
     }else if(time>60 && time<3600){
         var m=deciFormat(Math.floor(time/60));
-        var s=deciFormat(Math.floor(time%60));
+        var s=checkSeconds(deciFormat(Math.floor(time%60)));
         t=`${m}:${s}`
     }else if(time>3600){
-        console.log("Hour zone")
         var h=deciFormat(Math.floor(time/3600));
         var m=deciFormat(Math.floor((time-h*3600)/60));
-        var s=deciFormat(Math.floor(time%60))
+        var s=checkSeconds(deciFormat(Math.floor(time%60)))
         t=`${h}:${m}:${s}`
     }else {
-        //console.log("Error while converting time")
         t='00:00:00'
     }
     return t
+}
+function checkSeconds(seconds){
+    var formated_seconds=''
+    if(seconds.lenght>2){formated_seconds=`${seconds[1]}${seconds[2]}`}
+    else{formated_seconds=seconds}
+    return formated_seconds
 }
 
 const dialog=require("electron").remote.dialog;
@@ -121,7 +122,3 @@ function openDialog(){
         console.log(err)
     })
 }
-
-//module.exports={ video }
-
-

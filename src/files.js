@@ -11,6 +11,7 @@ var SaveSystem=class SaveSystem{
         return data
     }
     saveData(data){
+        //check if file exists [true->create a new file and save ]:[false -> continue to save]
         fs.writeFile(this.filepath, data, "utf-8", (error, data) => {
             if (error){
                 console.error("error: " + error);
@@ -26,6 +27,7 @@ var SaveSystem=class SaveSystem{
         }
         this.saveData(exportDataString)
     }
+    //append data to existing file
 }
 var Logs=class Logs{
     static logPath="./data/logs/"
