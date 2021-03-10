@@ -2,6 +2,7 @@ var { addTransCription,video,setVideoSrc }=require ('./transcription.js');
 const { deciFormat }=require('./transcription.js')
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
+var pOuter=document.getElementById("progress_outer")
 const repeatButton=document.getElementById("repeat")
 //volume to be implemented latter on
 const editor=document.getElementById('editor')
@@ -15,12 +16,16 @@ editor.addEventListener('keydown',(e)=>{
        playPause()
     }else if(e.ctrlKey && event.key=='z'){
         console.log("Repeat Key Combination")
-    }else if(e.ctrlKey && event.key=='n'){
+    }else if(e.ctrlKey && event.key=='n' || event.key=='N' ){
         var text=document.getElementById('editor')
         addTransCription({"text":text.value,"currentTime":video.currentTime})
         text.value=''
+    }else if(e.ctrlKey && event.key=='ArrowRight'){
+        scrub(videoElement.currentTime+3)
+    }else if(e.ctrlKey && event.key=='ArrowLeft'){
+        scrub(videoElement.currentTime-3)
     }else{
-
+        console.log(e.key)
     }
 })
 videoElement.addEventListener('timeupdate',(e)=>{
@@ -31,7 +36,7 @@ videoElement.addEventListener('timeupdate',(e)=>{
      }
     //increase length of progress_inner
     var pInner=document.getElementById("progress_inner")
-    var pOuter=document.getElementById("progress_outer")
+    //var pOuter=document.getElementById("progress_outer")
     var percent=(video.currentTime / video.duration)*100
     pInner.style.width=`${percent}%`
     //console.log(pInner.style.width)
@@ -39,6 +44,19 @@ videoElement.addEventListener('timeupdate',(e)=>{
 });
 
 playPauseButton.addEventListener('click',(e)=>{playPause()})
+
+pOuter.addEventListener('click',(e)=>{
+    var cords=e.target.getBoundingClientRect()//getting the position of the element in relation to parent
+    var parStart=cords.left//x cordinate in relation to parent
+    var mouseClickX=e.clientX//get mouse click x cordinate
+    var jumpTo=(mouseClickX-parStart)*(videoElement.duration/e.target.offsetWidth)
+    console.log(jumpTo)
+    console.log(`Jumping to ${jumpTo}`)
+    scrub(jumpTo)
+})
+function scrub(time){
+    videoElement.currentTime=time
+}
 
 function playPause(){
     if(video.IsPlaying){pauseVideo()}
