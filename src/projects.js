@@ -1,5 +1,4 @@
 const { SaveSystem } =require('./files.js')
-const { getTranscriptions,setTfromSec }=require('./transcription')
 var project={
     name:null,
     videoPath:null,
@@ -9,12 +8,12 @@ var project={
 function getProjectDetails(){return project}
 function setProjectDetails(newProjectDetails){ project=newProjectDetails}
 
-function createProject(){
-    var projectDetailsString=JSON.stringify(project)
-    var s=new SaveSystem(`./data/projects/${project.name}.json`)
+function saveProject(projectObject){
+    var projectDetailsString=JSON.stringify(projectObject)
+    var s=new SaveSystem(`./data/projects/${projectObject.name}.json`)
     s.saveData(`${projectDetailsString}\n`)
     var projectList=getProjects()
-    projectList.push({"name":project.name,"date":new Date()})
+    projectList.push({"name":projectObject.name+".json","date":new Date()})
     var pSave=new SaveSystem('./data/logs/project_list.json')
     pSave.saveData(JSON.stringify(projectList))
 }
@@ -56,7 +55,7 @@ function deleteProject(projectNum){
 
 
 module.exports={
-    createProject,
+    saveProject,
     loadProject,
     deleteProject,
     getProjectDetails,

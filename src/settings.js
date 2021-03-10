@@ -1,5 +1,6 @@
 var { SaveSystem } =require('./files.js');
 var { getTranscription,getVideoSrc }=require('./transcription')
+var { saveProject }=require('./projects.js')
 var configs={}
 var darkMode=false
 
@@ -22,6 +23,14 @@ function saveTranscription(){
         if(data!=undefined && data.length>0){
             s.exportToSrtFile(data)
         }
+        var projectName=videoPath.split('/')[videoPath.split('/').length-1]
+        var project={
+            name:projectName.replace(/%20/g,''),
+            videoPath:videoPath.split('file://')[1].replace(/%20/g,' '),
+            tsPath:srtFilePath.replace(/%20/g,' '),
+            projectTranscriptions:data
+        }
+        saveProject(project)
     }else{
         console.log("Please ensure you have loaded a video")
     }
