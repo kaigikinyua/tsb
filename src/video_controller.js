@@ -1,5 +1,5 @@
-var { addTransCription,video,setVideoSrc }=require ('./transcription.js');
-const { deciFormat }=require('./transcription.js')
+var { addTransCription,video,setVideoSrc,deciFormat }=require ('./transcription.js');
+//const { deciFormat }=require('./transcription.js')
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
 var pOuter=document.getElementById("progress_outer")
