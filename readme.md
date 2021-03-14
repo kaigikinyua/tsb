@@ -33,3 +33,6 @@ format since it is the most commonly used.
     ### Adding, deleting, editing the transcription timings and transcription text
 3. Save the projects you are working on and load them latter.
 
+## Development Dependencies
+1. Node V 10.15.2
+2. Electron V 8.1.0
