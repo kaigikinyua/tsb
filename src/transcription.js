@@ -1,4 +1,5 @@
 var { configs } = require('./settings.js')
+var { Notification }=require('./notifications.js')
 var video={
     IsPlaying:false,
     currentTime:0,

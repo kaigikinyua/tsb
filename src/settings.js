@@ -1,6 +1,7 @@
 var { SaveSystem } =require('./files.js');
 var { getTranscription,getVideoSrc }=require('./transcription.js')
 var { saveProject }=require('./projects.js')
+var { Notification }=require('./notifications.js')
 var configs={}
 var darkMode=false
 

@@ -1,12 +1,11 @@
 var { addTransCription,video,setVideoSrc,deciFormat }=require ('./transcription.js');
-//const { deciFormat }=require('./transcription.js')
+var { Notification }=require('./notifications.js')
+
 const videoElement=document.getElementById("video")
 const playPauseButton=document.getElementById("playPause")
 var pOuter=document.getElementById("progress_outer")
 const repeatButton=document.getElementById("repeat")
-//volume to be implemented latter on
 const editor=document.getElementById('editor')
-//var repeat={start:0,end:0,}
 
 window.onload=()=>{
     resetVideo()
@@ -30,17 +29,14 @@ editor.addEventListener('keydown',(e)=>{
 })
 videoElement.addEventListener('timeupdate',(e)=>{
     upDateVideoTime()
-    if(video.duration==null){
+    if(video.duration==null || video.duration==undefined){
         video.duration=videoElement.duration
         resetVideo()
      }
     //increase length of progress_inner
     var pInner=document.getElementById("progress_inner")
-    //var pOuter=document.getElementById("progress_outer")
     var percent=(video.currentTime / video.duration)*100
     pInner.style.width=`${percent}%`
-    //console.log(pInner.style.width)
-    //console.log(percent)
 });
 
 playPauseButton.addEventListener('click',(e)=>{playPause()})
@@ -50,8 +46,8 @@ pOuter.addEventListener('click',(e)=>{
     var parStart=cords.left//x cordinate in relation to parent
     var mouseClickX=e.clientX//get mouse click x cordinate
     var jumpTo=(mouseClickX-parStart)*(videoElement.duration/e.target.offsetWidth)
-    console.log(jumpTo)
-    console.log(`Jumping to ${jumpTo}`)
+    //console.log(jumpTo)
+    //console.log(`Jumping to ${jumpTo}`)
     scrub(jumpTo)
 })
 function scrub(time){
@@ -75,15 +71,31 @@ function resetVideo(){
 function playVideo(){
     var p=document.getElementById("playPause")
     p.innerHTML=null
-    videoElement.play();
-    p.innerHTML="<i class='fa fa-pause'></i>"
+    console.log(videoElement.src)
+    if(srcNotNull()){
+        videoElement.play();
+        if(video.duration==null || video.duration==undefined){
+            video.duration=videoElement.duration
+        }
+        p.innerHTML="<i class='fa fa-pause'></i>"
+    }else{
+        p.innerHTML="<i class='fa fa-pause'></i>"
+    }
 }
 
 function pauseVideo(){
     var p=document.getElementById("playPause")
     p.innerHTML=null
-    videoElement.pause();
-    p.innerHTML="<i class='fa fa-play'></i>"
+    if(srcNotNull()){
+        videoElement.pause();
+        p.innerHTML="<i class='fa fa-play'></i>"
+    }
+}
+function srcNotNull(){
+    if(videoElement.src==undefined || videoElement.src=="" || videoElement.src==null){
+        Notification.error('Please select a video from your computer')
+        return false
+    }return true
 }
 
 function upDateVideoTime(){
@@ -105,12 +117,12 @@ function convertSeconds(time){
         var s=checkSeconds(deciFormat(Math.floor(time)))
         var t=`00:${s}`
     }else if(time>60 && time<3600){
-        var m=deciFormat(Math.floor(time/60));
+        var m=checkSeconds(deciFormat(Math.floor(time/60)));
         var s=checkSeconds(deciFormat(Math.floor(time%60)));
         t=`${m}:${s}`
     }else if(time>3600){
         var h=deciFormat(Math.floor(time/3600));
-        var m=deciFormat(Math.floor((time-h*3600)/60));
+        var m=checkSeconds(deciFormat(Math.floor((time-h*3600)/60)));
         var s=checkSeconds(deciFormat(Math.floor(time%60)))
         t=`${h}:${m}:${s}`
     }else {
@@ -120,7 +132,7 @@ function convertSeconds(time){
 }
 function checkSeconds(seconds){
     var formated_seconds=''
-    if(seconds.lenght>2){formated_seconds=`${seconds[1]}${seconds[2]}`}
+    if(seconds.length>2){formated_seconds=`${seconds[1]}${seconds[2]}`}
     else{formated_seconds=seconds}
     return formated_seconds
 }
@@ -130,13 +142,14 @@ function openDialog(){
     pauseVideo()
     dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] })
     .then(result=>{
-        //console.log(result)
-        setTimeout(resetVideo(),1000)
+        setTimeout(()=>{resetVideo()},1000)
         videoElement.src=result.filePaths[0]
         videoElement.pathToVideo=videoElement.src.toString()
         setVideoSrc(videoElement.pathToVideo)
+        Notification.success("Successfully loaded the video")
     })
     .catch((err)=>{
-        console.log(err)
+        Notification.error('Could not load the video<br/>Please try again')
+        //console.log(err)
     })
 }

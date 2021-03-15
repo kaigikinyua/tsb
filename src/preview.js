@@ -1,5 +1,6 @@
 var { getTranscription,setTfromSec } =require('./transcription.js')
 var tContainer=document.getElementById('transcriptions_preview')
+var { Notification }=require('./notifications.js')
 var tsEdit=false
 
 var transcriptions=getTranscription()
