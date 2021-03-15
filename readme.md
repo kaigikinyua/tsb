@@ -36,3 +36,11 @@ format since it is the most commonly used.
 ## Development Dependencies
 1. Node V 10.15.2
 2. Electron V 8.1.0
+
+
+## Preview
+###     UI darkmode preview
+![Screenshot](./assets/UI/dark_1.png)
+
+###     UI lightmode preview
+![Screenshot](./assets/UI/light_1.png)
