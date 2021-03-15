@@ -1,5 +1,7 @@
 # TSBR 
 
+![Screenshot](./assets/logo_done.png)
+
 ## What is TSBR?
 TSBR is a desktop application dedicated to enabling a user to transcribe
 a video or audio file to srt files.
