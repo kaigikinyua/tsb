@@ -23,7 +23,8 @@ nav.topnav {
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 60px;
+  height: 40px;
+  overflow: hidden;
 }
 
 div.appbar {
@@ -45,9 +46,9 @@ section.app {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -67,6 +68,32 @@ button {
   font-weight: bolder;
   border-radius: 30px;
   outline: none;
+}
+
+div#notification {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 400px;
+}
+
+.error {
+  background: crimson;
+  color: white;
+}
+
+.warning {
+  background: yellow;
+  color: black;
+}
+
+.success {
+  background: lightgreen;
+  color: white;
 }
 
 .input {
@@ -107,6 +134,36 @@ button {
   to {
     left: 0px;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes notification {
+  0% {
+    bottom: -100%;
+  }
+  20% {
+    bottom: 50%;
+  }
+  80% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+@keyframes notification {
+  0% {
+    bottom: -100%;
+  }
+  20% {
+    bottom: 50%;
+  }
+  80% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 0%;
   }
 }
 /*# sourceMappingURL=all.css.map */
