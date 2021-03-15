@@ -1,6 +1,6 @@
 # TSBR 
 
-![Screenshot](./assets/logo_done.png)
+![Screenshot](./assets/logo_64x64.png)
 
 ## What is TSBR?
 TSBR is a desktop application dedicated to enabling a user to transcribe
