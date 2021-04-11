@@ -1,0 +1,10 @@
+Todos:
+    -Add the 'change to audio mode' functionality
+    -Poslish the UI
+        -Clean up the colors on the menu inputs while in dark mode
+        -Success notification colors are too light
+
+Bugs:
+    -The play button does not show on initialization
+
+Features:
